@@ -38,13 +38,10 @@ describe('UsersService', () => {
       const userObj = { username: 'testU2ser', email: 'newuser@xyz.com', type: 'default' };
 
       try {
-        // Act
         const result = await service.createUser(userObj);
   
-        // If no error was thrown, fail the test
         fail('Expected an error to be thrown.');
       } catch (error) {
-        // Assert
         expect(error).toBeInstanceOf(HttpException);
       }
     });
